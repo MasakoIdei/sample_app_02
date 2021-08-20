@@ -17,8 +17,8 @@ class TodolistsController < ApplicationController
 
 #新規投稿保存
  def create
-   list = List.new(list_params)
-   if list.save
+   @list = List.new(list_params)
+   if @list.save
      redirect_to todolist_path(list.id)
    else
      render 'new'
@@ -39,7 +39,7 @@ class TodolistsController < ApplicationController
 
  private
  def list_params
-   params.require(:list).permit(:title, :body)
+   params.require(:list).permit(:title, :body, :image)
  end
 
 end
