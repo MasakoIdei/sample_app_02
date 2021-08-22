@@ -1,0 +1,9 @@
+<!--バリデーション・エラーメッセージ-->
+<% if list.errors.any? %>
+ <%= list.errors.count %>件のエラーが発生しました。
+ <% list.errors.full_messages.each do |msg| %>
+   <ul>
+     <li><%= msg %></li>
+   </ul>
+  <% end %>
+<% end %>
