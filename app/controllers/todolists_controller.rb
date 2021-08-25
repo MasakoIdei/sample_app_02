@@ -37,6 +37,12 @@ class TodolistsController < ApplicationController
   redirect_to todolist_path(list.id)
  end
 
+ def destory
+  list = List.find(params[:id])
+  list.destroy
+  redirect_to todolists_index_path
+ end
+
  private
  def list_params
    params.require(:list).permit(:title, :body, :image)

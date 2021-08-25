@@ -1,4 +1,6 @@
 <h1>編集画面</h1>
+<%= render 'todolists/errors', list: @list %>
+
 <%= form_with model:@list, url: todolist_path(@list.id), local:true do |f| %>
 <h4>タイトル</h4>
 <%= f.text_field :title %>
