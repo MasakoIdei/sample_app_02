@@ -32,9 +32,14 @@ class TodolistsController < ApplicationController
 
 #投稿内容の更新
  def update
-  list = List.find(params[:id])
-  list.update(list_params)
-  redirect_to todolist_path(list.id)
+  @list = List.find(params[:id])
+  if @list.update(list_params)
+   flash[:notice]="内容を更新しました。"
+   redirect_to todolist_path(@list.id)
+  else
+   flash[:notice]="保存に失敗しました。"
+   render 'edit'
+  end
  end
 
  def destory

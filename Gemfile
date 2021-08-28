@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 #画像加工（サイズ調整等）
 gem "refile-mini_magick"
+
+
+gem 'toastr-rails'
